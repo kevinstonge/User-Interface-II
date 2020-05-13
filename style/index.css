@@ -15,51 +15,89 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     --fg0: #ccc;
     --fg1: #ddd;
     --fg2: #eee;
+    --smGap: 0.3rem;
+    --medGap: 0.5rem;
+    --lgGap: 1rem;
 }
 body { 
     background-color: var(--bg0);
     color: var(--fg0);
-    padding: 0.5rem;
+    padding: var(--medGap);
+    max-width: 40rem; /* target <= 80characters per line */
+    margin-left: auto;
+    margin-right: auto;
 }
 body>header { 
-    padding: 0.5rem;
+    padding: var(--medGap);
     color: var(--fg1);
     background-color: var(--bg1);
 }
 h1 {
     font-size: 150%;
 }
+h2 {
+    font-size: 120%;
+}
+h2, h3, p {
+    margin-left: var(--medGap);
+    margin-bottom: var(--medGap);
+}
 nav {
-    padding-top: 1ch;
-    margin: 1ch 0;
+    padding-top: var(--smGap);
+    margin: var(--smGap) 0;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 nav>a {
     color: var(--fg2);
     text-decoration: none;
     color: var(--fg2);
     background-color: var(--bg2);
-    padding: 1ch;
+    padding: var(--smGap);
     transition: background-color 0.2s, box-shadow 0.2s, border-radius 0.2s;
-
+    margin-left: var(--medGap);
 }
 nav>a:hover {
     background-color: var(--bg1);
-    box-shadow: 0 0 0.3rem var(--fg1);
-    border-radius: 0.3rem;
+    box-shadow: 0 0 var(--smGap) var(--fg1);
+    border-radius: var(--smGap);
+}
+section {
+    padding: var(--medGap);
 }
 section.flexRow {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 0 auto;
 }
+
 section.flexRowWrap {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
+.imgWithCaption { margin-right: var(--smGap); }
 .imgWithCaption>p {
     text-align: center;
+}
+footer { 
+    background: var(--bg1);
+    padding: var(--medGap);
+}
+footer>p,h2 { text-align: center; }
+footer>p>button {
+    border: 0; 
+    outline: 0; 
+    background-color: var(--bg2); 
+    color: var(--fg2); 
+    padding: var(--smGap); 
+    font-size: 120%;
+}
+footer>p>button:hover {
+    border-radius: var(--medGap);
+    box-shadow: 0 0 var(--medGap) var(--fg2);
 }
