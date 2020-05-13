@@ -26,6 +26,7 @@ body {
     max-width: 40rem; /* target <= 80characters per line */
     margin-left: auto;
     margin-right: auto;
+    background: linear-gradient(var(--bg0), var(--bg1));
 }
 body>header { 
     padding: var(--medGap);
@@ -66,6 +67,9 @@ nav>a:hover {
 section {
     padding: var(--medGap);
 }
+
+section + section { margin-top: 0; padding-top: 0; }
+
 section.flexRow {
     display: flex;
     flex-direction: row;
@@ -79,6 +83,7 @@ section.flexRowWrap {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: var(--medGap);
 }
 .imgWithCaption { margin-right: var(--smGap); }
 .imgWithCaption>p {
@@ -88,8 +93,8 @@ footer {
     background: var(--bg1);
     padding: var(--medGap);
 }
-footer>p,h2 { text-align: center; }
-footer>p>button {
+footer>p,footer>h2 { text-align: center; }
+button {
     border: 0; 
     outline: 0; 
     background-color: var(--bg2); 
@@ -97,7 +102,18 @@ footer>p>button {
     padding: var(--smGap); 
     font-size: 120%;
 }
-footer>p>button:hover {
+button:hover {
     border-radius: var(--medGap);
     box-shadow: 0 0 var(--medGap) var(--fg2);
+    cursor: pointer;
+}
+
+@media (orientation: portrait) {
+    section.flexRowWrap {
+        justify-content: center;
+    }
+    /* section.flexRowWrap img { 
+        width: calc(100vw - (4 * var(--medGap)));
+        max-width: calc(40rem - (4 * var(--medGap)));
+    } */
 }
