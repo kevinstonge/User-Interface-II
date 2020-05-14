@@ -20,13 +20,15 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     --lgGap: 1rem;
 }
 body { 
-    background-color: var(--bg0);
+    min-height: 100vh;
+    box-sizing: border-box;
     color: var(--fg0);
     padding: var(--medGap);
-    max-width: 40rem; /* target <= 80characters per line */
+    max-width: 41rem; /* target <= 80characters per line */
     margin-left: auto;
     margin-right: auto;
     background: linear-gradient(var(--bg0), var(--bg1));
+    background-repeat: no-repeat;
 }
 body>header { 
     padding: var(--medGap);
@@ -56,7 +58,7 @@ nav>a {
     color: var(--fg2);
     background-color: var(--bg2);
     padding: var(--smGap);
-    transition: background-color 0.2s, box-shadow 0.2s, border-radius 0.2s;
+    transition: background-color 0.5s, box-shadow 0.5s, border-radius 0.5s;
     margin-left: var(--medGap);
 }
 nav>a:hover {
@@ -101,19 +103,19 @@ button {
     color: var(--fg2); 
     padding: var(--smGap); 
     font-size: 120%;
+    transition: box-shadow 0.5s;
 }
 button:hover {
     border-radius: var(--medGap);
     box-shadow: 0 0 var(--medGap) var(--fg2);
     cursor: pointer;
 }
+input:focus, textarea:focus {
+    outline: 2px dashed rgb(80, 174, 228);
+}
 
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
     section.flexRowWrap {
         justify-content: center;
     }
-    /* section.flexRowWrap img { 
-        width: calc(100vw - (4 * var(--medGap)));
-        max-width: calc(40rem - (4 * var(--medGap)));
-    } */
-}
+} */
